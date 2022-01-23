@@ -1,4 +1,5 @@
 import loadHome from "./home";
+import loadMenu from "./menu";
 
 function createHeader() {
   const header = document.createElement("header");
@@ -21,8 +22,10 @@ function createNav() {
   about.textContent = "about";
   menu.textContent = "menu";
   navBar.append(home);
-  navBar.append(about);
   navBar.append(menu);
+  navBar.append(about);
+  home.addEventListener("click", loadHome);
+  menu.addEventListener("click", loadMenu);
   return navBar;
 }
 function createMain() {
